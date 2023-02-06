@@ -101,7 +101,7 @@ export default async function Home() {
 
   if (!data) {
     // not working yet https://github.com/vercel/next.js/issues/44232
-    redirect('https://linktr.ee/selenagomez');
+    redirect('https://twitter.com/Muhamma76571391');
   }
 
   return (
