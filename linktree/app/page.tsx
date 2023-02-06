@@ -1,5 +1,9 @@
 import Image from 'next/image'
-import data from '@/data.json'
+import { get } from '@vercel/edge-config';
+import { redirect } from 'next/navigation';
+
+export const dynamic = 'force-dynamic',
+  runtime = 'edge';
 
 function TwitterIcon() {
   return (
@@ -49,13 +53,13 @@ function GitHubIcon() {
   );
 }
 
-type Data = {
+type LinkCard = {
   title: string,
   href: string,
   image?: string
 }
 
-function LinkCard({ title, href, image }: Data) {
+function LinkCard({ title, href, image }: LinkCard) {
   return (
     <a href={href} className='flex items-center p-1 rounded-md hover:scale-105 transition-all border bg-gray-100 mb-3 w-full max-w-3xl'>
       <div className='flex text-center w-full text-gray-200'>
@@ -73,9 +77,33 @@ function LinkCard({ title, href, image }: Data) {
     </a>
   )
 }
+interface Data {
+  name: string;
+  avatar: string;
+  links: Link[];
+  socials: Social[];
+}
 
+interface Link {
+  href: string;
+  title: string;
+  image?: string;
+}
 
-export default function Home() {
+interface Social {
+  href: string;
+  title: string;
+}
+
+export default async function Home() {
+
+  const data: Data | undefined = await get('linktree');
+
+  if (!data) {
+    // not working yet https://github.com/vercel/next.js/issues/44232
+    redirect('https://linktr.ee/selenagomez');
+  }
+
   return (
     <div className='flex items-center flex-col mx-auto w-full justify-center mt-16 px-8'>
       <Image
@@ -92,10 +120,14 @@ export default function Home() {
       <div className='flex items-center gap-4 mt-8'>
       {data.socials.map((link) => {
         if (link.href.includes('twitter')) {
-          return < TwitterIcon />
+          return (<a href={link.href}>          
+          < TwitterIcon />
+          </a>)
         }
         if (link.href.includes('github')) {
-          return < GitHubIcon />
+          return (<a href={link.href}>          
+            < GitHubIcon />
+            </a>)
         }
       }
       )}
