@@ -3,9 +3,10 @@ import Image from 'next/image'
 
 export default function Box() {
     return (
-        <div>
-            <Image className='bg-center bg-repeat-x bg-clip-border,' alt='box' src={'/box.JPG'} width={250} height={250}></Image>
+        <div className='bg-gradient-to-l from-red-500 to-blue-500 via-yellow-500'>
+            <Image className='m-10 border-r-4 border-dotted border-y-8 rounded-lg bg-fixed' alt='box' src={'/box.JPG'} width={250} height={250}></Image>
             <div>
+                Exploring borders in detail
                 <div className="mb-10">
                     <button className="p-10 border border-black">One</button>
                     <button className="m-10 border border-black">Two</button>
@@ -55,17 +56,17 @@ export default function Box() {
             </div>
 
                 // BG Image Styles
+                <div className="min-h-screen blur-xl brightness-200 bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-r bg-repeat-x bg-fixed"></div>
             <div className="bg-gray-50">
                 <div className="text-6xl font-bold p-10">
                     <div
-                        className="bg-clip-text text-transparent py-2
-bg-gradient-to-l from-gray-50 to-black">
+                        className="bg-clip-text text-transparent py-2 bg-gradient-to-l from-gray-50 to-black">
                         NorthBy: A Premium in Sight and Sound
                     </div>
                 </div>
             </div>
 
-
+            
 
         </div >
     )
