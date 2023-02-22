@@ -1,5 +1,6 @@
 import { Header, SubHeader, SubSubHeader } from "./components/MyHeadingStyles";
 
+
 export default function Test02() {
   return (
     <>
@@ -8,6 +9,8 @@ export default function Test02() {
       <SubHeader>Less Cool Text</SubHeader>
       <SubSubHeader>Kind of boring text</SubSubHeader>
       <br />
+
+      <br/>
       Or we can define them with @apply directive in global.css and apply them
       like this
       <div className="title">Title</div>
@@ -16,6 +19,7 @@ export default function Test02() {
       <div className="title text-5xl text-green-700">Title</div>
       <br />
       <h1>Test</h1>
+      <a className="hover:[masktype:luminance]">Click me</a>
     </>
   );
 }

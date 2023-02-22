@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function Typo() {
     return (
@@ -8,6 +7,12 @@ export default function Typo() {
             <h1 className="text-4xl font-bold">Title</h1>
             <h2 className="text-2xl font-semibold">Subtitle</h2>
             <h3 className="text-lg font-medium italic selection:font-bold">Header</h3>
+
+            <h2 className="decoration-wavy">Test Is Test</h2>
+            <h2 className="decoration-double">Test Is Test</h2>
+            <h2 className="decoration-dashed">Test Is Test</h2>
+            <h2 className="decoration-dotted">Test Is Test</h2>
+
 
 
 

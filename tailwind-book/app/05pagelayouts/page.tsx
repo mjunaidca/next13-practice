@@ -12,13 +12,13 @@ export default function PageLayouts() {
                 </tr>
             </table>
             <h1 className='my-5 font-semibold hover:text-gray-700 selection:bg-red-400 text-2xl text-blue-600'>Grids (two-dimensional layout)</h1>
-            <div className="grid grid-cols-2 w-1/4 gap-4">
+            <div className="grid grid-cols-2 w-1/4 gap-4 bg-green-300">
                 <div className="border bg-gray-300 text-center">A</div>
                 <div className="border bg-gray-300 text-center">B</div>
                 <div className="border bg-gray-300 text-center">C</div>
                 <div className="border bg-gray-300 text-center">D</div>
             </div>
-            <div className="pt-10 grid grid-rows-2 w-1/4 gap-4 grid-flow-col">
+            <div className="pt-10 grid grid-rows-2 w-1/4 gap-4 grid-flow-col bg-blue-200">
                 <div className="border bg-gray-300 text-center">A</div>
                 <div className="border bg-gray-300 text-center">B</div>
                 <div className="border bg-gray-300 text-center">C</div>

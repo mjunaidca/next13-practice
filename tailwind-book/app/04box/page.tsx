@@ -26,6 +26,19 @@ export default function Box() {
                 <button className="m-4 p-4 rounded-2xl ring-2">Five</button>
                 <button className="m-4 p-4 rounded-full ring-4 ring-offset-4 ring-offset-black"> Six</button>
             </div>
+            <div>
+                Making Border to Rings
+                <div className="mb-10 bg-red-700/[43]">
+                    <button className="p-10 border ring">One</button>
+                    <button className="m-10 border ring">Two</button>
+                    <button className="m-2 p-2 border-4 ring">Three</button>
+                </div>
+                <div>
+                    <button className="m-4 p-4 border-2 ring rounded-md">Four</button>
+                    <button className="m-4 p-4 border-2 ring rounded-2xl">Five</button>
+                    <button className="m-4 p-4 border-2 ring rounded-full">Six</button>
+                </div>
+            </div>
 
             // Shadows
             <div className="bg-gray-50 p-10">

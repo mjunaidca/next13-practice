@@ -1,10 +1,12 @@
-import Navbar from "@/views/navbar";
-import ChakraWrapper from "../components/ChakraWrapper";
+// import './globals.css'
+
+import Wrapper from "@/components/Wrapper"
+import Navbar from "@/views/Navbar"
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -13,11 +15,12 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      
       <body>
-      <Navbar />
-        <ChakraWrapper>{children}</ChakraWrapper>
-      </body>
+        <Navbar />
+          <Wrapper>
+            {children}
+          </Wrapper>
+        </body>
     </html>
-  );
+  )
 }
