@@ -1,4 +1,0 @@
-@tailwind base;  /* contains tailwind reset stylesheet called Preflight. (restyling all base HTML elements to minimal set of styling properties) */
-@tailwind components; /* have container CSS classes definitions,used at page top level to define the box that the whole page is drawn in */
-@tailwind utilities; /* defines all the utilities and their modified variants. */
-
