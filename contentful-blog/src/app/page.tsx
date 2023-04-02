@@ -35,7 +35,7 @@ export default async function Home() {
             <div>
               {" "}
               {blogposts.includes.Asset.map((a: any) => (
-                <div className="">
+                <div key={item.field}>
                   {item.fields.img && item.fields.img.sys.id === a.sys.id ? (
                     <div className="w-full h-32 object-cover ">
                       <Image
