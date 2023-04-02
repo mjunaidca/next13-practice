@@ -26,24 +26,24 @@ export default async function Home() {
       <h1 className=" pt-10 pb-6 text-3xl md:text-4xl font-bold text-white">
         NextJS13 + Contentful
       </h1>
-      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
         {blogposts.items.map((item: any) => (
           <div
             key={item.fields.title}
-            className="flex flex-col max-w-xs gap-8 bg-white shadow-lg hover:scale-105 duration-500  p-2 rounded-3xl m-6 pb-4 "
+            className="flex flex-col max-w-xs gap-8 bg-white  shadow-blue-100 shadow-sm  hover:scale-105 overflow  duration-500 rounded-3xl m-6 pb-4 "
           >
             <div>
               {" "}
               {blogposts.includes.Asset.map((a: any) => (
                 <div key={item.field}>
                   {item.fields.img && item.fields.img.sys.id === a.sys.id ? (
-                    <div className="w-full h-32 object-cover ">
+                    <div>
                       <Image
                         src={"https:" + a.fields.file.url}
                         alt="Author"
                         width="350"
                         height="450"
-                        className="w-full h-32 object-cover rounded-xl"
+                        className="w-full h-32  object-cover overflow rounded-xl"
                       />
                     </div>
                   ) : (
@@ -52,15 +52,15 @@ export default async function Home() {
                 </div>
               ))}{" "}
             </div>
-            <div className="mt-auto flex flex-col gap-3  px-3">
+            <div className="mt-auto flex flex-col gap-3  px-5">
               {" "}
-              <div className="font-bold text-2xl">{item.fields.title}</div>
+              <div className="font-bold text-xl">{item.fields.title}</div>
               <div className="text-gray-600 text-base">
                 {documentToReactComponents(item.fields.description)}{" "}
               </div>
             </div>
 
-            <div className="text-gray-800 text-base font-semibold  px-3">
+            <div className="text-gray-800 text-base font-semibold  px-5">
               {blogposts.includes.Entry.map((a: any) => (
                 <div key={a.sys.id}>
                   {item.fields.creator &&
